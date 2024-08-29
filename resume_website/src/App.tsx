@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import './App.css'
+import TopBar from './TopBar'
+import Page from './Page'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [page, setPage] = useState(0);
+  
   
   return (
     <>
-      
+      <TopBar setPage={setPage}/>
+      <Page page={page}/>
     </>
   )
 }
