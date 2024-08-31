@@ -36,9 +36,9 @@ export function ProjectPreset3_3({title, github, image1, image2, image3, paragra
                 <img src={image1} style={{position: 'absolute', left: '2vw', top: '2.2vw', width: '14vw'}}/>
                 <img src={image2} style={{position: 'absolute', marginLeft: 'auto', marginRight: 'auto', left: '0', right: '0', top: '2.2vw', width: '14vw'}}/>
                 <img src={image3} style={{position: 'absolute', right: '2vw', top: '2.2vw', width: '14vw'}}/>
-                <p style={{bottom: '.25vw', left:'.25vw', margin: '0', width: '20vw'}}>{paragraph1}</p>
-                <p style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', bottom: '.25vw', width: '24vw' }}>{paragraph2}</p>
-                <p style={{bottom: '.25vw', right: '.25vw', margin: '0', width: '20vw'}}>{paragraph3}</p>
+                <p className='preset_p' style={{bottom: '.25vw', left:'.25vw', margin: '0', width: '20vw'}}>{paragraph1}</p>
+                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', bottom: '.25vw', width: '24vw' }}>{paragraph2}</p>
+                <p className='preset_p' style={{bottom: '.25vw', right: '.25vw', margin: '0', width: '20vw'}}>{paragraph3}</p>
             </div>
         </div>
     )
@@ -65,9 +65,9 @@ export function ProjectPreset1_2_3({title, github, image1, image2, image3, parag
                 <img src={image1} style={{position: 'absolute', left: '8vw', top: '2.2vw', width: '14vw', height: '28vw'}}/>
                 <img src={image2} style={{position: 'absolute', right: '8vw', top: '2.2vw', width: '14vw'}}/>
                 <img src={image3} style={{position: 'absolute', right: '8vw', top: '16.3vw', width: '14vw'}}/>
-                <p style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', top: '4vw', margin: '0', width: '34vw'}}>{paragraph1}</p>
-                <p style={{bottom: '.25vw', left: '.25vw', margin: '0', width: '38vw' }}>{paragraph2}</p>
-                <p style={{bottom: '.25vw', right: '.25vw', margin: '0', width: '38vw'}}>{paragraph3}</p>
+                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', top: '4vw', margin: '0', width: '34vw'}}>{paragraph1}</p>
+                <p className='preset_p' style={{bottom: '.25vw', left: '.25vw', margin: '0', width: '38vw' }}>{paragraph2}</p>
+                <p className='preset_p' style={{bottom: '.25vw', right: '.25vw', margin: '0', width: '38vw'}}>{paragraph3}</p>
             </div>
         </div>
     )
