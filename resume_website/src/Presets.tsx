@@ -1,36 +1,54 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react' 
+//import the language
 import './Presets.css'
+import CodeDisplay from './CodeDisplay'
+import Star from '/assets/Star.png'
+import { languages } from 'prismjs';
 
 interface SectionHeaderProps {
     title: string;
+    description?: string;
+    height?: string | undefined;
 }
 
-export function SectionHeader({title}: SectionHeaderProps)
+export function SectionHeader({title, description, height}: SectionHeaderProps)
 {
+    if (height == undefined)
+        height = '3.1vw';
     return(
         <>
-        <br></br>
-        <div></div>
+        <br />
+        <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{width: '100%', height: height, position: 'relative', backgroundColor: '#1F1F1F', borderColor: "white", borderStyle: 'solid'}}>
+                <h1 className='preset_p' style={{fontSize: '2.5vw', marginLeft: 'auto', marginRight: 'auto', marginBottom: 'auto', marginTop: 'auto', left: '0', right: '0', top: '0', bottom:'0'}}>{title}</h1>
+                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', bottom: '0',}}>{description}</p>
+            </div>
+        </div>
+        <br />
         </>
     )
 }
 
-interface ProjectPreset1Props {
-    title: string;
-    github: string;
-    image1: string;
-    image2: string;
-    image3: string;
-    paragraph1: string;
-    paragraph2: string;
-    paragraph3: string;
+interface ProjectPreset3_3_Props {
+    title?: string | undefined;
+    github?: string | undefined;
+    special?: boolean | false;
+    image1?: string | undefined;
+    image2?: string | undefined;
+    image3?: string | undefined;
+    paragraph1?: string | JSX.Element | undefined;
+    paragraph2?: string | JSX.Element | undefined;
+    paragraph3?: string | JSX.Element | undefined;
 }
 
 //Three 1:1 images, three paragraphs
-export function ProjectPreset3_3({title, github, image1, image2, image3, paragraph1, paragraph2, paragraph3} : ProjectPreset1Props) {
+export function ProjectPreset3I_3P({title, github, special, image1, image2, image3, paragraph1, paragraph2, paragraph3} : ProjectPreset3_3_Props) {
+    var borderType = (special ? "solid" : "none");
+    var star = (special ? Star : undefined);
     return (
         <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <div style={{width: '80%', height: '28vw', position: 'relative', backgroundColor: '#1F1F1F'}}>
+            <div style={{width: '80%', height: '28vw', position: 'relative', backgroundColor: '#1F1F1F', borderColor: "white", borderStyle: borderType}}>
+                <img src={star} hidden={!special} title='Favorite' style={{position: 'absolute', margin: '.2vw', width: '1.2vw'}}></img>
                 <h1 style={{color: 'white', fontSize: '1.8vw', margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '100%', textAlign: 'center'}}>{title}</h1>
                 <a href={github} style={{position: 'absolute', right: '.25vw', top: '.25vw', fontSize: '1.1vw'}}>GITHUB</a>
                 <img src={image1} style={{position: 'absolute', left: '2vw', top: '2.2vw', width: '14vw'}}/>
@@ -44,28 +62,149 @@ export function ProjectPreset3_3({title, github, image1, image2, image3, paragra
     )
 }
 
-interface ProjectPreset2Props {
-    title: string;
-    github: string;
-    image1: string;
-    image2: string;
-    image3: string;
-    paragraph1: string;
-    paragraph2: string;
-    paragraph3: string;
+interface ProjectPreset1_2_3_Props {
+    title?: string | undefined;
+    github?: string | undefined;
+    special?: boolean | false;
+    image1?: string | undefined;
+    image2?: string | undefined;
+    image3?: string | undefined;
+    paragraph1?: string | JSX.Element | undefined;
+    paragraph2?: string | JSX.Element | undefined;
+    paragraph3?: string | JSX.Element | undefined;
 }
 
 //One 1:2 image, two 1:1 images, 3 paragraphs
-export function ProjectPreset1_2_3({title, github, image1, image2, image3, paragraph1, paragraph2, paragraph3} : ProjectPreset2Props) {
+export function ProjectPreset1I_2I_3P({title, github, special, image1, image2, image3, paragraph1, paragraph2, paragraph3} : ProjectPreset1_2_3_Props) {
+    var borderType = (special ? "solid" : "none");
+    var star = (special ? Star : undefined);
     return (
         <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <div style={{width: '80%', height: '38vw', position: 'relative', backgroundColor: '#1F1F1F'}}>
+            <div style={{width: '80%', height: '44vw', position: 'relative', backgroundColor: '#1F1F1F', borderColor: "white", borderStyle: borderType}}>
+                <img src={star} hidden={!special} title='Favorite' alt='Favorite' style={{position: 'absolute', margin: '.2vw', width: '1.2vw'}}></img>
                 <h1 style={{color: 'white', fontSize: '1.8vw', margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '100%', textAlign: 'center'}}>{title}</h1>
                 <a href={github} style={{position: 'absolute', right: '.25vw', top: '.25vw', fontSize: '1.1vw'}}>GITHUB</a>
                 <img src={image1} style={{position: 'absolute', left: '8vw', top: '2.2vw', width: '14vw', height: '28vw'}}/>
                 <img src={image2} style={{position: 'absolute', right: '8vw', top: '2.2vw', width: '14vw'}}/>
                 <img src={image3} style={{position: 'absolute', right: '8vw', top: '16.3vw', width: '14vw'}}/>
-                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', top: '4vw', margin: '0', width: '34vw'}}>{paragraph1}</p>
+                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', top: '4vw', width: '34vw'}}>{paragraph1}</p>
+                <p className='preset_p' style={{bottom: '.25vw', left: '.25vw', margin: '0', width: '38vw' }}>{paragraph2}</p>
+                <p className='preset_p' style={{bottom: '.25vw', right: '.25vw', margin: '0', width: '38vw'}}>{paragraph3}</p>
+            </div>
+        </div>
+    )
+}
+
+interface ProjectPreset1_2_Props {
+    title?: string | undefined;
+    github?: string | undefined;
+    special?: boolean | false;
+    image1?: string | undefined;
+    paragraph1?: string | JSX.Element | undefined;
+    paragraph2?: string | JSX.Element | undefined;
+}
+
+//One 16:9 image, 2 paragraphs
+export function ProjectPreset1I_2P({title, github, special, image1, paragraph1, paragraph2} : ProjectPreset1_2_Props) {
+    var borderType = (special ? "solid" : "none");
+    var star = (special ? Star : undefined);
+    return (
+        <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{width: '80%', height: '30vw', position: 'relative', backgroundColor: '#1F1F1F', borderColor: "white", borderStyle: borderType}}>
+                <img src={star} hidden={!special} title='Favorite' style={{position: 'absolute', margin: '.2vw', width: '1.2vw'}}></img>
+                <h1 style={{color: 'white', fontSize: '1.8vw', margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '100%', textAlign: 'center'}}>{title}</h1>
+                <a href={github} style={{position: 'absolute', right: '.25vw', top: '.25vw', fontSize: '1.1vw'}}>GITHUB</a>
+                <img src={image1} style={{position: 'absolute', left: '3vw', bottom: '2.2vw', width: '30vw', height: '16.875vw'}}/>
+                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', top: '3vw', width: '34vw'}}>{paragraph1}</p>
+                <p className='preset_p' style={{bottom: '4vw', right: '4vw', margin: '0', width: '38vw' }}>{paragraph2}</p>
+            </div>
+        </div>
+    )
+}
+
+interface ProjectPreset1C_2I_3P_Props {
+    title?: string | undefined;
+    github?: string | undefined;
+    special?: boolean | false;
+    codeExample?: string;
+    language: 'language-csharp' | 'language-javascript' | 'language-java'
+    image2?: string | undefined;
+    image3?: string | undefined;
+    paragraph1?: string | JSX.Element | undefined;
+    paragraph2?: string | JSX.Element | undefined;
+    paragraph3?: string | JSX.Element | undefined;
+}
+
+//One code box, two 1:1 images, 3 paragraphs
+export function ProjectPreset1C_2I_3P({title, github, special, codeExample: code, language, image2, image3, paragraph1, paragraph2, paragraph3} : ProjectPreset1C_2I_3P_Props) {
+    var borderType = (special ? "solid" : "none");
+    var star = (special ? Star : undefined);
+    const [codeText, setCodeText] = useState<string>('');
+    
+    if (code != undefined)
+    {
+        useEffect(() => {
+        fetch(code)
+            .then((response) => response.text())
+            .then((text) => setCodeText(text))
+            .catch((error) => console.error('Error fetching the text file:', error));
+        }, []);
+    }
+
+    return (
+        <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{width: '80%', height: '44vw', position: 'relative', backgroundColor: '#1F1F1F', borderColor: "white", borderStyle: borderType}}>
+                <img src={star} hidden={!special} title='Favorite' style={{position: 'absolute', margin: '.2vw', width: '1.2vw'}}></img>
+                <h1 style={{color: 'white', fontSize: '1.8vw', margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '100%', textAlign: 'center'}}>{title}</h1>
+                <a href={github} style={{position: 'absolute', right: '.25vw', top: '.25vw', fontSize: '1.1vw'}}>GITHUB</a>
+                <CodeDisplay code={codeText} language={language} color='white' position='absolute' left='2vw' top='2.2vw' width='18vw' height='28vw'></CodeDisplay>
+                <img src={image2} style={{position: 'absolute', right: '8vw', top: '2.2vw', width: '14vw'}}/>
+                <img src={image3} style={{position: 'absolute', right: '8vw', top: '16.3vw', width: '14vw'}}/>
+                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', top: '4vw', width: '34vw'}}>{paragraph1}</p>
+                <p className='preset_p' style={{bottom: '.25vw', left: '.25vw', margin: '0', width: '38vw' }}>{paragraph2}</p>
+                <p className='preset_p' style={{bottom: '.25vw', right: '.25vw', margin: '0', width: '38vw'}}>{paragraph3}</p>
+            </div>
+        </div>
+    )
+}
+
+interface ProjectPreset1C_1I_3P_Props {
+    title?: string | undefined;
+    github?: string | undefined;
+    special?: boolean | false;
+    codeExample?: string;
+    language: 'language-csharp' | 'language-javascript' | 'language-java'
+    image1?: string | undefined;
+    paragraph1?: string | JSX.Element | undefined;
+    paragraph2?: string | JSX.Element | undefined;
+    paragraph3?: string | JSX.Element | undefined;
+}
+
+//One code box, two 1:1 images, 3 paragraphs
+export function ProjectPreset1C_1I_3P({title, github, special, codeExample: code, language, image1, paragraph1, paragraph2, paragraph3} : ProjectPreset1C_1I_3P_Props) {
+    var borderType = (special ? "solid" : "none");
+    var star = (special ? Star : undefined);
+    const [codeText, setCodeText] = useState<string>('');
+    
+    if (code != undefined)
+    {
+        useEffect(() => {
+        fetch(code)
+            .then((response) => response.text())
+            .then((text) => setCodeText(text))
+            .catch((error) => console.error('Error fetching the text file:', error));
+        }, []);
+    }
+
+    return (
+        <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{width: '80%', height: '44vw', position: 'relative', backgroundColor: '#1F1F1F', borderColor: "white", borderStyle: borderType}}>
+                <img src={star} hidden={!special} title='Favorite' style={{position: 'absolute', margin: '.2vw', width: '1.2vw'}}></img>
+                <h1 style={{color: 'white', fontSize: '1.8vw', margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '100%', textAlign: 'center'}}>{title}</h1>
+                <a href={github} style={{position: 'absolute', right: '.25vw', top: '.25vw', fontSize: '1.1vw'}}>GITHUB</a>
+                <CodeDisplay code={codeText} language={language} color='white' position='absolute' left='2vw' top='2.2vw' width='18vw' height='28vw'></CodeDisplay>
+                <img src={image1} style={{position: 'absolute', right: '2vw', top: '2.2vw', width: '18vw', height: '32vw'}}/>
+                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', top: '4vw', width: '34vw'}}>{paragraph1}</p>
                 <p className='preset_p' style={{bottom: '.25vw', left: '.25vw', margin: '0', width: '38vw' }}>{paragraph2}</p>
                 <p className='preset_p' style={{bottom: '.25vw', right: '.25vw', margin: '0', width: '38vw'}}>{paragraph3}</p>
             </div>

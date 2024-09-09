@@ -2,9 +2,21 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url('./assets/background.png');
+    background-image: url('/assets/background.png');
     background-size: cover; /* Ensures the image covers the entire background */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the image fixed in place */
     background-position: center; /* Centers the image on the page */
+}
+
+a:link {
+    color: rgb(200, 200, 200);
+}
+
+a:visited {
+    color: rgb(200, 200, 200);
+}
+
+a:hover {
+    color: rgb(150, 150, 150)
 }
