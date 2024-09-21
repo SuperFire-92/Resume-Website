@@ -10,13 +10,13 @@ body {
 }
 
 a:link {
-    color: rgb(200, 200, 200);
+    color: #2D57FF;
 }
 
 a:visited {
-    color: rgb(200, 200, 200);
+    color: #2D57FF;
 }
 
 a:hover {
-    color: rgb(150, 150, 150)
+    color: #ffffff
 }

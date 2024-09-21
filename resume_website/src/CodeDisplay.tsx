@@ -9,7 +9,7 @@ interface CodeDisplayProps {
     code: string;
     language: 'language-csharp' | 'language-javascript' | 'language-java'
     color: string;
-    position: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky' | undefined;
+    position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky' | undefined;
     left?: string | undefined;
     right?: string | undefined;
     top?: string | undefined;
@@ -19,24 +19,23 @@ interface CodeDisplayProps {
 }
 
 function CodeDisplay({code, language, color, position, left, right, top, bottom, width, height} : CodeDisplayProps) {
-  const codeRef = useRef<HTMLElement>(null);
+    const codeRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
+    useEffect(() => {
     if (codeRef.current) {
-      Prism.highlightElement(codeRef.current);
-    }
-  }, [code]);
+        Prism.highlightElement(codeRef.current);
+    }}, [code]);
 
-  const formattedCode = code.trimStart();
+    const formattedCode = code.trimStart();
 
   
-  return (
-    <pre style={{color: color, position: position, left: left, right: right, top: top, bottom: bottom, width: width, height: height, padding: '.8vw', overflow: 'scroll', whiteSpace: 'pre', fontFamily: 'monospace', scrollbarWidth: 'thin', scrollbarColor: '#1F1F1F'}}>
-        <code ref={codeRef} className="language-csharp" style={{overflow: 'scroll', whiteSpace: 'pre', fontFamily: 'monospace', fontSize: '.8vw', lineHeight: '.1vw', tabSize: ''}}>
-            {formattedCode}
-        </code>
-    </pre>
-  );
+    return (
+      <pre style={{color: color, position: position, left: left, right: right, top: top, bottom: bottom, width: width, height: height, padding: '.8vw', overflow: 'scroll', whiteSpace: 'pre', fontFamily: 'monospace', scrollbarWidth: 'thin', scrollbarColor: '#1F1F1F'}}>
+          <code ref={codeRef} className={language} style={{overflow: 'scroll', whiteSpace: 'pre', fontFamily: 'monospace', fontSize: '.8vw', lineHeight: '18px', tabSize: ''}}>
+              {formattedCode}
+          </code>
+      </pre>
+    );
 }
 
 export default CodeDisplay;

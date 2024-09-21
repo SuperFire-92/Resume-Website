@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import './Page.css'
 import Projects from './Projects'
 import Welcome from './Welcome'
+import Jobs from './Jobs'
 
 interface PageProps {
     page: number;
@@ -21,6 +21,14 @@ function Page({ page }: PageProps) {
         return(
             <>
                 <Projects></Projects>
+            </>
+        )
+    }
+    if (page == 2)
+    {
+        return(
+            <>
+                <Jobs></Jobs>
             </>
         )
     }

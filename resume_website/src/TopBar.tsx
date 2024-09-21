@@ -16,6 +16,7 @@ function TopBar({setPage}: TopBarProps) {
             <div className='row' id='buttonRow'>
                 <button className='button' onClick={() => setPage(0)}>Home</button>
                 <button className='button' onClick={() => setPage(1)}>Projects</button>
+                <button className='button' onClick={() => setPage(2)}>Jobs</button>
             </div>
         </div>
     )

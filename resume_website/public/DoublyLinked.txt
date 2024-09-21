@@ -1,0 +1,218 @@
+#include <iostream>
+using namespace std;
+class Node
+{
+private:
+	Pet pet;
+	Node* next;
+	Node* previous;
+public:
+	Node();
+	Node(Pet, Node*, Node*);
+
+	Pet getPet();
+	Node* getNext();
+	Node* getPrevious();
+
+	void setPet(int, string, string, int);
+	void setPet(Pet);
+	void setNext(Node*);
+	void setPrevious(Node*);
+};
+
+DoublyList::DoublyList()
+{
+	head = nullptr;
+	tail = nullptr;
+}
+
+void DoublyList::appendNode(int i, string t, string n, int a)
+{
+	//node to be added to the list
+	Node* node;
+	//node to keep track of the old tail
+	Node* oldTail;
+
+	//set up the node
+	node = new Node();
+
+	node->setPet(i, t, n, a);
+
+	//If there is no head yet, set the head and tail to be the new node
+	if (!head)
+	{
+		head = node;
+		tail = node;
+		node->setNext(nullptr);
+		node->setPrevious(nullptr);
+	}
+	//If there is already a unique head and tail in the list,
+	else
+	{
+		oldTail = tail;
+		tail = node;
+		oldTail->setNext(node);
+		node->setPrevious(oldTail);
+		node->setNext(nullptr);
+	}
+}
+
+void DoublyList::insertNode(int i, string t, string n, int a)
+{
+	//node to be added to the list
+	Node* node;
+	//node currently being compared
+	Node* curNode = nullptr;
+	//previous node before curNode
+	Node* prevNode = nullptr;
+
+	//set up the node
+	node = new Node();
+
+	node->setPet(i, t, n, a);
+
+	//If there is no head yet, set the head and tail to be the new node
+	if (!head)
+	{
+		head = node;
+		tail = node;
+		node->setNext(nullptr);
+		node->setPrevious(nullptr);
+	}
+	//If there is a head, look at the rest of the list
+	else
+	{
+		curNode = head;
+
+		//First check to see if the head needs to be replaced
+		if (i < curNode->getPet().getId())
+		{
+			head = node;
+			node->setPrevious(nullptr);
+			node->setNext(curNode);
+			curNode->setPrevious(node);
+		}
+		else
+		{
+			//Then loop through and check every other item in the list
+			prevNode = curNode;
+			curNode = curNode->getNext();
+			while (i > curNode->getPet().getId() && curNode->getNext() != nullptr)
+			{
+				prevNode = curNode;
+				curNode = curNode->getNext();
+			}
+			//if the tail is the last object, and it's still smaller than the new node, set the tail to be the new node
+			if (curNode->getNext() == nullptr && curNode->getPet().getId() < node->getPet().getId())
+			{
+				tail = node;
+				node->setNext(nullptr);
+				node->setPrevious(curNode);
+				curNode->setNext(node);
+				curNode->setPrevious(prevNode);
+				prevNode->setNext(curNode);
+			}
+			//if it's in the middle and not replacing the head or tail, do this
+			else
+			{
+				prevNode->setNext(node);
+				curNode->setPrevious(node);
+				node->setPrevious(prevNode);
+				node->setNext(curNode);
+			}
+
+		}
+	}
+}
+
+void DoublyList::deleteNode(int i)
+{
+	Node* curNode = nullptr;
+	Node* prevNode = nullptr;
+	Node* nextNode = nullptr;
+
+	//Start by checking if the head matches
+	if (head->getPet().getId() == i)
+	{
+		//If it does, set the next node's previous to nullptr,
+		//set the head to the next node, and delete the old head
+		curNode = head;
+		nextNode = head->getNext();
+		nextNode->setPrevious(nullptr);
+		delete curNode;
+		head = nextNode;
+	}
+	//if the head doesn't match, loop through and find what does
+	else
+	{
+		//loop through and find a match
+		curNode = head->getNext();
+		
+		while (curNode->getPet().getId() != i && curNode->getNext() != nullptr)
+		{
+			curNode = curNode->getNext();
+		}
+		//make sure curNode matches the id
+		if (curNode->getPet().getId() == i)
+		{
+			prevNode = curNode->getPrevious();
+			
+			//If the current node is not the tail
+			if (curNode->getNext() != nullptr)
+			{
+				nextNode = curNode->getNext();
+				prevNode->setNext(nextNode);
+				nextNode->setPrevious(prevNode);
+				delete curNode;
+			}
+			//else if it is the tail
+			else
+			{
+				prevNode->setNext(nullptr);
+				tail = prevNode;
+				delete curNode;
+			}			
+		}
+		//if no object with that id was found, the function ends
+	}
+}
+
+void DoublyList::displayForward()
+{
+	//Set up a node to reference the current node
+	Node* curNode;
+	//Start by setting it to the head
+	curNode = head;
+	//Begin a loop displaying all information about the current node,
+	//and then at the end move it to the next node
+	while (curNode != nullptr)
+	{
+		cout << "Id  : " << curNode->getPet().getId() << endl;
+		cout << "Name: " << curNode->getPet().getName() << endl;
+		cout << "Type: " << curNode->getPet().getType() << endl;
+		cout << "Age : " << curNode->getPet().getAge() << endl;
+		cout << endl;
+
+		curNode = curNode->getNext();
+	}
+}
+
+void DoublyList::displayBackward()
+{
+	//Set up a node to reference the current node
+	Node* curNode;
+	//Start by setting it to the tail
+	curNode = tail;
+	//Begin a loop displaying all information about the current node,
+	//and then at the end move it to the previous node
+	while (curNode != nullptr)
+	{
+		cout << "Id  : " << curNode->getPet().getId() << endl;
+		cout << "Name: " << curNode->getPet().getName() << endl;
+		cout << "Type: " << curNode->getPet().getType() << endl;
+		cout << "Age : " << curNode->getPet().getAge() << endl;
+		cout << endl;
+
+		curNode = curNode->getPrevious();
+	}
+}
