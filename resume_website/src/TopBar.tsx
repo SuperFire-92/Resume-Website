@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './TopBar.css'
 import logo from '/assets/logo.png'
 
