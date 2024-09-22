@@ -1,4 +1,3 @@
-import './TopBar.css'
 import logo from '/assets/logo.png'
 
 interface TopBarProps {

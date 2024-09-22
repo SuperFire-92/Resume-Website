@@ -1,4 +1,3 @@
-import './Projects.css'
 import * as Preset from './Presets'
 import GameDev from './PRGames'
 import AppDev from './PRAndroid'
@@ -20,11 +19,17 @@ function Projects()
             paragraph1='[EXAMPLE TEXT 1 THAT ALSO HAPPENS TO BE VERY VERY LONG SO LONG IT JUST KEEPS GOING WOOHOO OH]'
             paragraph2='[EXAMPLE TEXT 2 THAT IS ALSO SUPER DUPER LONG HOLY MOLY IT JUST KEEPS GOING AND GOING AND GOING]'
             paragraph3='[EXAMPLE TEXT 3 THAT IS NOT QUITE AS LONG OH DEAR OK]'/> */}
+            <br/>
             <Preset.SectionHeader title='College Projects' description='These projects are from all of the classes I took in college, sorted by class.' height='5vw'/>
+            <br/>
             <GameDev/>
+            <br/>
             <AppDev/>
+            <br/>
             <Discrete/>
+            <br/>
             <WebDev/>
+            <br/>
             <CPP/>
             <br></br>
         </>

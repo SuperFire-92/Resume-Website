@@ -7,6 +7,7 @@ function AppDev()
     return (
         <>
             <Preset.SectionHeader title='Mobile App Development'/>
+            <br/>
             <Preset.ProjectPreset1C_1VI_3P title='Handyman App' date='12/10/2023' github='https://github.com/SuperFire-92/CIS183_FinalProject' codeExample={Handyman_Code} language='language-java' special={true} image1={App_Handyman}
             paragraph1={<>The Handyman App was my final project in my Mobile App Development class. I worked with a graphic designer to build an app using Java and MySQL that would allow
             users to make calls to a handyman, and that handyman to be able to see all of the information about the call. The project required a database with full CRUD,

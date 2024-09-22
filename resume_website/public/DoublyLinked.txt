@@ -1,23 +1,19 @@
+#pragma once
 #include <iostream>
-using namespace std;
-class Node
+#include "Node.h"
+class DoublyList
 {
 private:
-	Pet pet;
-	Node* next;
-	Node* previous;
+	Node* head;
+	Node* tail;
 public:
-	Node();
-	Node(Pet, Node*, Node*);
+	DoublyList();
 
-	Pet getPet();
-	Node* getNext();
-	Node* getPrevious();
-
-	void setPet(int, string, string, int);
-	void setPet(Pet);
-	void setNext(Node*);
-	void setPrevious(Node*);
+	void appendNode(int, string, string, int);
+	void insertNode(int, string, string, int);
+	void deleteNode(int);
+	void displayForward();
+	void displayBackward();
 };
 
 DoublyList::DoublyList()

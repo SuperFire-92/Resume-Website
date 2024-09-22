@@ -1,4 +1,3 @@
-import './Page.css'
 import Projects from './Projects'
 import Welcome from './Welcome'
 import Jobs from './Jobs'
