@@ -1,15 +1,23 @@
-import { useState } from 'react'
 import './App.css'
 import TopBar from './TopBar'
-import Page from './Page'
+import Projects from './Projects'
+import Welcome from './Welcome'
+import Jobs from './Jobs'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [page, setPage] = useState(0);
   
   return (
     <>
-      <TopBar setPage={setPage}/>
-      <Page page={page}/>
+    <Router>
+      <TopBar/>
+      <Routes>
+          <Route index element={<Welcome/>}/>
+          <Route path='/projects' element={<Projects/>}/>
+          <Route path='/jobs' element={<Jobs/>}/>
+          <Route path='*' element={<Welcome/>}/>
+      </Routes>
+    </Router>
     </>
   )
 }

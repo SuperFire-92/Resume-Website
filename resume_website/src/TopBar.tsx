@@ -1,10 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import logo from '/assets/logo.png'
 
-interface TopBarProps {
-    setPage: React.Dispatch<React.SetStateAction<number>>;
-}
-
-function TopBar({setPage}: TopBarProps) {
+function TopBar() {
+    const navigate = useNavigate()
     return (
         <div id='background' className='container'>
             <div className='row'>
@@ -12,9 +10,10 @@ function TopBar({setPage}: TopBarProps) {
             </div>
             <div className='row'></div>
             <div className='row' id='buttonRow'>
-                <button className='button' onClick={() => setPage(0)}>Home</button>
-                <button className='button' onClick={() => setPage(1)}>Projects</button>
-                <button className='button' onClick={() => setPage(2)}>Jobs</button>
+                <button className='button' onClick={() => navigate('/')}>Home</button>
+                <button className='button' onClick={() => navigate('/projects')}>Projects</button>
+                <button className='button' onClick={() => navigate('jobs')}>Jobs</button>
+                
             </div>
         </div>
     )
