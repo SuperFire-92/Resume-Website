@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react' 
 //import the language
 import CodeDisplay from './CodeDisplay'
-import Media from './VidGif'
+import Media from './Media'
 import Star from '/assets/Star.png'
 const BORDER_COLOR = 'white'
 

@@ -28,13 +28,13 @@ function CodeDisplay({code, language, color, position, left, right, top, bottom,
 
     const formattedCode = code.trimStart();
 
-  
+
     return (
-      <pre style={{color: color, position: position, left: left, right: right, top: top, bottom: bottom, width: width, height: height, padding: '.8vw', overflow: 'scroll', whiteSpace: 'pre', fontFamily: 'monospace', scrollbarWidth: 'thin', scrollbarColor: '#1F1F1F'}}>
-          <code ref={codeRef} className={language} style={{overflow: 'scroll', whiteSpace: 'pre', fontFamily: 'monospace', fontSize: '.8vw', lineHeight: '18px', tabSize: ''}}>
-              {formattedCode}
-          </code>
-      </pre>
+        <pre style={{color: color, position: position, left: left, right: right, top: top, bottom: bottom, width: width, height: height, padding: '.8vw', overflow: 'scroll', whiteSpace: 'pre', fontFamily: 'monospace', scrollbarWidth: 'thin', scrollbarColor: '#1F1F1F'}}>
+            <code ref={codeRef} className={language} style={{overflow: 'scroll', whiteSpace: 'pre', fontFamily: 'monospace', fontSize: '.8vw', lineHeight: '18px', tabSize: ''}}>
+                {formattedCode}
+            </code>
+        </pre>
     );
 }
 
