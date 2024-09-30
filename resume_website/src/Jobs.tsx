@@ -13,8 +13,8 @@ function Jobs()
             as safe as they can be.</>}/>
             <br/>
             <Preset.JobPreset title='Code Sensei' date={'April 2022 - March 2023'} company={<><a href='https://www.codeninjas.com/' target='_blank'>Code Ninjas</a></>}
-            description1={<>For shortly under a year, I worked as a teacher for a franchise called Code Ninjas. We taught kids how to code in a custom GDP using JavaScript.
-            Kids would come in for an hour twice a week, and my job was to make sure they were working on their projects, and help guide them if they needed assistance.</>}/>
+            description1={<>For about a year, I worked as a teacher at a franchise called Code Ninjas. We taught kids how to code in a custom game development progrma using JavaScript.
+            Kids would come in and work on their assigned coding projects, and my job was to make sure they were staying focused on their tasks, and help guide them if they needed assistance.</>}/>
         </>
     )
 }

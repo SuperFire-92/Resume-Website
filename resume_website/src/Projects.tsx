@@ -20,7 +20,9 @@ function Projects()
             paragraph2='[EXAMPLE TEXT 2 THAT IS ALSO SUPER DUPER LONG HOLY MOLY IT JUST KEEPS GOING AND GOING AND GOING]'
             paragraph3='[EXAMPLE TEXT 3 THAT IS NOT QUITE AS LONG OH DEAR OK]'/> */}
             <br/>
-            <Preset.SectionHeader title='College Projects' description='These projects are from all of the classes I took in college, sorted by class.' height='5vw'/>
+            <Preset.SectionHeader title='Projects' description='Here you can find a full list of all of the projects that I have been part of developing.' height='5vw'/>
+            <br/>
+            <Preset.SectionHeader title='College Projects' description='These projects are from all of the classes I took in college, sorted by class.' height='5vw' width='90%'/>
             <br/>
             <GameDev/>
             <br/>

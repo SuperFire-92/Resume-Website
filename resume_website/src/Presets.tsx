@@ -18,18 +18,21 @@ interface SectionHeaderProps {
     title: string;
     description?: string;
     height?: string | undefined;
+    width?: string | undefined;
 }
 
-export function SectionHeader({title, description, height}: SectionHeaderProps)
+export function SectionHeader({title, description, height, width}: SectionHeaderProps)
 {
     if (height == undefined)
         height = '3.1vw';
+    if (width == undefined)
+        width = '100%';
     return(
         <>
         <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <div style={{width: '100%', height: height, position: 'relative', backgroundColor: '#1F1F1F', borderColor: 'white', borderStyle: 'solid'}}>
+            <div style={{width: width, height: height, position: 'relative', backgroundColor: '#1F1F1F', borderColor: 'white', borderStyle: 'solid'}}>
                 <h1 className='preset_p' style={{fontSize: '2.5vw', marginLeft: 'auto', marginRight: 'auto', marginBottom: 'auto', marginTop: 'auto', left: '0', right: '0', top: '0', bottom:'0'}}>{title}</h1>
-                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', bottom: '0',}}>{description}</p>
+                <p className='preset_p' style={{marginLeft: 'auto', marginRight: 'auto', marginBottom: '0', left: '0', right: '0', bottom: '.2vw',}}>{description}</p>
             </div>
         </div>
         </>

@@ -12,7 +12,7 @@ function Welcome() {
                         Hi there! Welcome to my website! My name is Nicolaas, and I am a software developer.
                         <br/><br/>
                         Here you can find information about myself and a list of my different coding projects. If you would like to reach out, you can contact me at <a href="mailto:nickdyk21@gmail.com">nickdyk21@gmail.com</a>,
-                        and you can find the rest of my projects at <a href="https://github.com/SuperFire-92">github.com/SuperFire-92</a>.
+                        and you can find all of my projects at <a href="https://github.com/SuperFire-92">github.com/SuperFire-92</a>.
                     </p>
                 </div>
             </div>

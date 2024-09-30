@@ -4,7 +4,7 @@ function WebDev()
 {
     return (
         <>
-            <Preset.SectionHeader title='Website Development'/>
+            <Preset.SectionHeader title='Website Development' width='85%'/>
             <br/>
             <Preset.ProjectPreset1I_1P_M title='Click Counter' date='12/11/2023' github='https://github.com/SuperFire-92/CIS212_Homework03' special={true} image1='/assets/ClickCounter.png'
             paragraph1={<>This website was my final project in my web development class. I had to make an app that would count the number of clicks a user could
