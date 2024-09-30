@@ -1,5 +1,4 @@
 # Resume-Website
-
 ## [NixsSoftware](https://www.nixssoftware.com/)
 
 This is a website developed using React with Typescript.
