@@ -16,14 +16,14 @@ function CPP()
             paragraph3={<>This is the maze after being solved. The path that the algorithm found is marked with arrows, and can be followed from the start at the top left corner to the end in
             the lower right quadrant.</>}/>
             <br/>
-            <Preset.ProjectPreset1C_1VI_3P_M title='Doubly Linked Lists' github='https://github.com/SuperFire-92/CIS250_Homework03' special={false} date='3/13/2023' image1='/assets/DoublyLinked.png' codeExample='/DoublyLinked.txt' language='language-csharp'
+            {/* <Preset.ProjectPreset1C_1VI_3P_M title='Doubly Linked Lists' github='https://github.com/SuperFire-92/CIS250_Homework03' special={false} date='3/13/2023' image1='/assets/DoublyLinked.png' codeExample='/DoublyLinked.txt' language='language-csharp'
             paragraph1={<>This app required me to build a doubly linked list from scratch. The list had to be made up of nodes, and each node had to know the node in front of it,
             and the node behind it. These nodes could store any type of data, but for this project I stored a pet, which included a name, species, age, and ID.</>}
             paragraph2={<>Here you can see the class that managed the Doubly Linked List. The object stores the head and tail of the list, so you can access the list from the front or back.
             This class also contains the Append, Insert, and Delete functions.</>}
             paragraph3={<>Here is how I displayed the list. This is an example of my code appending objects onto the list. There are 5 pets provided, and using the append function, each one
             is placed in order into the list. The program can also insert three extra pets, which will place them in the middle of the list so that their ID remains in order, and it can delete
-            pets based on the provided ID, which will remove the item from the list and ensure the list does not break.</>}/>
+            pets based on the provided ID, which will remove the item from the list and ensure the list does not break.</>}/> */}
         </>
     )
 }

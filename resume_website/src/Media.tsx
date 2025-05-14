@@ -22,7 +22,7 @@ function Media({src, style} : MediaProps) {
         {
             return (
                 <>
-                    <img src={src} style={style} />
+                    <img src={src} style={style}/>
                 </>
             )
         }

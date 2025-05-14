@@ -7,6 +7,7 @@ body {
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the image fixed in place */
     background-position: center; /* Centers the image on the page */
+    font-family: 'Times New Roman', Times, serif;
 }
 
 a:link {
@@ -52,7 +53,7 @@ a:hover {
 .button {
     background-color: #2D57FF;
     color: white;
-    width: 5.7vw;
+    width: 6vw;
     margin: -0.1vw;
     border: 0.21vw solid black;
     font-size: 1.1vw;
@@ -61,4 +62,26 @@ a:hover {
 .button:hover {
     background-color: white;
     color:black
+}
+
+#dropdownContent {
+    display: none;
+}
+
+#dropdown:hover #dropdownContent {
+    display: block;
+}
+
+
+.ticTacToeButton {
+    font-size: 2.5vw;
+    color: white;
+    background-color: #1F1F1F;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ticTacToeButton:hover {
+    background-color: #2D57FF;
+    color: black;
 }
